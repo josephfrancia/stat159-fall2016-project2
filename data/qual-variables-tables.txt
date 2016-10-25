@@ -1,0 +1,17 @@
+[1] "Frequency Table for Marriage Variable"
+            Counts Proportion
+Not Married    155     0.3875
+Married        245     0.6125
+[1] "Frequency Table for Ethnicity Variable"
+                 Counts Proportion
+African American     99     0.2475
+Asian               102     0.2550
+Caucasian           199     0.4975
+[1] "Frequency Table for Student Variable"
+            Counts Proportion
+Not Student    360        0.9
+Student         40        0.1
+[1] "Frequency Table for Gender Variable"
+       Counts Proportion
+Male      193     0.4825
+Female    207     0.5175

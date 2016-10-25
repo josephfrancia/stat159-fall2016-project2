@@ -1,0 +1,43 @@
+[1] "Statistics for Income Variable"
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  10.35   21.01   33.12   45.22   57.47  186.60 
+[1] 36.46
+[1] 176.25
+[1] 35.24427
+[1] "Statistics for Limit Variable"
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+    855    3088    4622    4736    5873   13910 
+[1] 2785
+[1] 13055
+[1] 2308.199
+[1] "Statistics for Rating Variable"
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   93.0   247.2   344.0   354.9   437.2   982.0 
+[1] 190
+[1] 889
+[1] 154.7241
+[1] "Statistics for Cards Variable"
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  1.000   2.000   3.000   2.958   4.000   9.000 
+[1] 2
+[1] 8
+[1] 1.371275
+[1] "Statistics for Age Variable"
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  23.00   41.75   56.00   55.67   70.00   98.00 
+[1] 28.25
+[1] 75
+[1] 17.24981
+[1] "Statistics for Education Variable"
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   5.00   11.00   14.00   13.45   16.00   20.00 
+[1] 5
+[1] 15
+[1] 3.125207
+[1] "Statistics for Balance Variable"
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   0.00   68.75  459.50  520.00  863.00 1999.00 
+[1] 794.25
+[1] 1999
+[1] 459.7589
+[1] "Matrix of Correlations"
