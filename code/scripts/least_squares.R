@@ -1,0 +1,6 @@
+#setwd("/Users/josephfrancia/Desktop/Fall_2016/Stats159/stat159-fall2016-project2/code/scripts")
+load(file="../../data/test_train.RData")
+lm_obj=lm(Balance~.,data=train[,-c(1,2)])
+y_hat=predict(lm_obj, newdata=test[,-c(1,2,14)])
+plot(y_hat-test[,14])
+mean(y_hat-test[,14])
