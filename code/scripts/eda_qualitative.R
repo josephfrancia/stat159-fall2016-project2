@@ -60,3 +60,53 @@ dev.off()
 
 
 
+
+
+data<-read.csv("http://www-bcf.usc.edu/~gareth/ISL/Credit.csv")
+#data=model.matrix(~0+.,read.csv("http://www-bcf.usc.edu/~gareth/ISL/Credit.csv"))[,-1]
+
+install.packages("corrplot")
+
+
+library("corrplot")
+png(filename="../../images/corrplot.png")
+corrplot(cor(data[,c(2:7,12)]))
+dev.off()
+
+png(filename="../../images/scatterplot.png")
+pairs(data)
+dev.off()
+
+
+install.packages("xtable")
+library("xtable")
+
+
+aov<- aov(Balance~Income+Limit+Rating+Cards+Age+Education,data=data)
+save(aov,file="../../data/avova-table.RData")
+
+
+
+png(filename="../../images/boxplot-gender.png")
+boxplot(Balance~Gender,data=data,horizontal=T,col=c("red","blue"),xlab="Balance")
+dev.off()
+
+
+png(filename="../../images/boxplot-ethnicity.png")
+boxplot(Balance~Ethnicity,data=data,horizontal=T,xlab="Balance",col=c("Brown", "yellow", "white"))
+dev.off()
+
+
+png(filename="../../images/boxplot-married.png")
+boxplot(Balance~Married,data=data,horizontal=T,xlab="Balance",col=c("orange","green"))
+dev.off()
+
+png(filename="../../images/boxplot-student.png")
+boxplot(Balance~Student,data=data,horizontal=T,xlab="Balance",col=c("pink","yellow"))
+dev.off()
+
+
+
+
+
+

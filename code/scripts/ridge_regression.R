@@ -4,11 +4,16 @@ library(glmnet)
 grid=10^seq(10,-2, length=100)
 ridge_obj=cv.glmnet(as.matrix(train[,-c(1,2,14)]), train[,14], lambda=grid, intercept=FALSE, standardize=FALSE)
 save(file="../../data/ridge_fit.RData")
-opt_lambda=ridge_obj$lambda.1se
+
+#Ridge Plot
+png(filename="../../images/plot-Ridge.png")
 plot(ridge_obj)
+dev.off()
 
-
-
+#Computing MSE of Ridge With Optimal Lambda
+opt_ridge=glmnet(as.matrix(train[,-c(1,2,14)]), train[,14], lambda=ridge_obj$lambda.1se, intercept=FALSE, standardize=FALSE)
+y_hat=as.matrix(cbind(test[-c(1,2,14)])) %*% opt_ridge$beta
+mse_ridge=mean(y_hat - test[,14])
 
 
 
