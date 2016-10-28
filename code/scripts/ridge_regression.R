@@ -8,7 +8,7 @@ grid=10^seq(10,-2, length=100)
 ridge_obj=cv.glmnet(as.matrix(train[,-c(1,2,14)]), train[,14], lambda=grid, intercept=FALSE, standardize=FALSE)
 
 #Ridge Plot
-png(filename="../../images/plot-Ridge.png")
+png(filename="../../images/plot-ridge.png")
 plot(ridge_obj)
 dev.off()
 
