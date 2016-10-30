@@ -1,0 +1,14 @@
+---
+title: "00-abstract.Rmd"
+output: html_document
+---
+Joseph Francia and Nicholas Saber 
+Professor Gaston Sanchez  
+Stats 159  
+4 October 2016  
+
+***
+#Abstract
+***
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Least-squares regression is by far the simplest and most well-known form of regression. Why? Well, for one, obtaining the solution to least-squares regression is fairly simple mathematically. One just needs to be able to do some matrix math and derivatives. More importantly, however, the solution to least-squares regression has the smallest variance of all other unbiased estimators. To sum it all up, the solution to least squares regression is unbiased, has minimal variance, and has a nice, clean analytical solution. So why use any other form of regression?  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; It actually turns out that least-squares regression is not optimal if we are interested in predicting values of new observations, given an existing datset we have. Why might this be the case? As we mentioned earlier, least squares regression provides us the estimate with the least variance amongst all other unbiased estimators. However, this unbiased estimator actually has more variance than many other biased estimators (e.g. Lasso and Ridge). As a result, we are now faced with two choices. We can either use a biased estimator with smaller variance or an unbiased estimator with larger variance. This problem is known as the [Bias-Variance Tradeoff] (https://en.wikipedia.org/wiki/Bias%E2%80%93variance_tradeoff). It turns out that the estimator with the best prediction accuracy rate is usually an estimator that is biased to at least some degree.

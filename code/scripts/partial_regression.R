@@ -19,7 +19,7 @@ full_plsr=plsr(Balance~., data=rbind(train[,-c(1,2)], test[,-c(1,2)]))
 #Saving all relevant plsr objects
 save(plsr_obj, mse_plsr, full_plsr$coefficients, filename="../../data/plsr.RData")
 
-sink(file="../../data/ridge.txt")
+sink(file="../../data/plsr.txt")
 print("Optimal # of Components for Plsr")
 plsr_obj$validation$PRESS
 
