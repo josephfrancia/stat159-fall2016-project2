@@ -1,0 +1,11 @@
+---
+title: "02-discussion.Rmd"
+output: html_document
+---
+#Data
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Before running any of these regressions, we first did some
+exploratory data analysis (EDA). Because we have both quantitative and qualitative explanatory variables in our dataset, our EDA for each variable would differ, depending on whether or not the variable was quantitative.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; For the quantitative variables, I created images, and we also computed summary statistics. More specifically, we computed each quantitative variable's standard deviation, interquartile range, range, and median. In addition, we also computed a histogram and a boxplot for each quantitative veariable. Finally, I created a correlation plot and a regression object between all the quantitative variables as well.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; As for the qualitative variables,  I created a different set of images and computed a different set of summary statistics. First, I created a frequency table for each qualitative variable. Next, I created a barchart for each qualitative variable.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; After doing our exploratory data analysis, we divided our data into training and test sets. The idea behind training and test sets is that we will run our regression on the training data set, and we will then test the accuracy of our regressions on our test data set. I did this by first creating a sequence of numbers, ordered 1:400. Then, I used the *sample* function in order to shuffle this ordered sequence. I then took the first 300 values of this shuffled sequence, and I marked these values as indices corresponding to our training set. The final 100 values of this shuffled sequence, meanwhile, corresponded to the indices in our test set.

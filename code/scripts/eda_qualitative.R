@@ -1,7 +1,19 @@
-
 #setwd("/Users/josephfrancia/Desktop/Fall_2016/Stats159/stat159-fall2016-project2/code/scripts")
 #data=read.csv("/Users/josephfrancia/Desktop/Fall_2016/Stats159/stat159-fall2016-project2/data/Credit.csv")
+#data=model.matrix(~0+.,read.csv("http://www-bcf.usc.edu/~gareth/ISL/Credit.csv"))[,-1]
+library(corrplot)
 
+data=read.csv("http://www-bcf.usc.edu/~gareth/ISL/Credit.csv")
+png(filename="../../images/corrplot.png")
+corrplot(cor(data[,c(2:7,12)]))
+dev.off()
+
+png(filename="../../images/scatterplot.png")
+pairs(data)
+dev.off()
+
+aov<- aov(Balance~Income+Limit+Rating+Cards+Age+Education,data=data)
+save(aov,file="../../data/avova-table.RData")
 
 
 #Making Frequency Table For Gender Variable
@@ -57,35 +69,6 @@ dev.off()
 png(filename="../../images/barchart-Studenet.png")
 barplot(table(data$Ethnicity), main="Barchart of Ethnicity", xlab="Ethnicity")
 dev.off()
-
-
-
-
-
-data<-read.csv("http://www-bcf.usc.edu/~gareth/ISL/Credit.csv")
-#data=model.matrix(~0+.,read.csv("http://www-bcf.usc.edu/~gareth/ISL/Credit.csv"))[,-1]
-
-install.packages("corrplot")
-
-
-library("corrplot")
-png(filename="../../images/corrplot.png")
-corrplot(cor(data[,c(2:7,12)]))
-dev.off()
-
-png(filename="../../images/scatterplot.png")
-pairs(data)
-dev.off()
-
-
-install.packages("xtable")
-library("xtable")
-
-
-aov<- aov(Balance~Income+Limit+Rating+Cards+Age+Education,data=data)
-save(aov,file="../../data/avova-table.RData")
-
-
 
 png(filename="../../images/boxplot-gender.png")
 boxplot(Balance~Gender,data=data,horizontal=T,col=c("red","blue"),xlab="Balance")
