@@ -1,8 +1,10 @@
-setwd("/Users/josephfrancia/Desktop/Fall_2016/Stats159/stat159-fall2016-project2/code/scripts")
+#setwd("/Users/josephfrancia/Desktop/Fall_2016/Stats159/stat159-fall2016-project2/code/scripts")
 
 #Finding various lambda values and their associated MSE
 set.seed(0)
-load(file="../../data/test_train.RData")
+load(file="../../data/test.RData")
+load(file="../../data/train.RData")
+
 library(glmnet)
 grid=10^seq(10,-2, length=100)
 ridge_obj=cv.glmnet(as.matrix(train[,-12]), train[,12], alpha=0, lambda=grid, intercept=FALSE, standardize=FALSE)

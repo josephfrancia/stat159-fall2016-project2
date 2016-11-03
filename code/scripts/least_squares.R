@@ -1,5 +1,7 @@
 #setwd("/Users/josephfrancia/Desktop/Fall_2016/Stats159/stat159-fall2016-project2/code/scripts")
-load(file="../../data/test_train.RData")
+load(file="../../data/test.RData")
+load(file="../../data/train.RData")
+
 lm_obj=lm(Balance~.,data=train)
 y_hat=predict(lm_obj, newdata=test[,-12])
 plot(y_hat-test[,12])

@@ -1,6 +1,8 @@
 #setwd("/Users/josephfrancia/Desktop/Fall_2016/Stats159/stat159-fall2016-project2/code/scripts")
 library(pls)
-load(file="../../data/test_train.RData")
+load(file="../../data/test.RData")
+load(file="../../data/train.RData")
+
 plsr_obj=plsr(Balance~.,data=train, validation="CV")
 min(plsr_obj$validation$PRESS)
 
