@@ -1,35 +1,44 @@
 scaled = data/scaled-credit.csv
 
+.PHONY: all ols ridge plsr pcr lasso compare code/script/pre_modeling_processing.R
+
 all:
 
 
 
-data: data/credit.csv
-	curl -o $@ http://www-bcf.usc.edu/~gareth/ISL/Credit.csv
-	Rscript -e code/script/pre_modeling_processing.R $@
+data: data/credit.csv code/script/pre_modeling_processing.R
+	curl -o data/credit.csv http://www-bcf.usc.edu/~gareth/ISL/Credit.csv
+	Rscript code/scripts/pre_modeling_processing.R data/credit.csv
+
 
 eda: data
 	Rscript -e code/script/eda_qualitative.R $(scaled)
 	Rscript -e code/script/eda_quantitative.R $(scaled)
 
-regressions: ols ridge plsr pcr lasso
-	Rscript -e comparing_regressions.R
+regressions:
+	make ols
+	make ridgemake plsr
+	make pcr
+	make lasso
 
-ols: code/scripts/least_squares.R
-	Rscript -e $@ $(scaled)
+compare:
+	Rscript -e code/scripts/comparing_regressions.R
+
+ols: 
+	Rscript  code/scripts/least_squares.R $(scaled)
 
 
-ridge: code/scripts/ridge_regression.R
-	Rscript -e $@ $(scaled)
+ridge: 
+	Rscript -e code/scripts/ridge_regression.R $(scaled)
 
-plsr: code/scripts/partial_regression.R
-	Rscript -e $@ $(scaled)
+plsr: 
+	Rscript -e code/scripts/partial_regression.R $(scaled)
 
-pcr: code/scripts/pcr.R
-	Rscript -e $@ $(scaled)
+pcr: 
+	Rscript -e code/scripts/pcr.R $(scaled)
 
-lasso: code/scripts/lasso.R
-	Rscript -e $@ $(scaled)
+lasso: 
+	Rscript -e code/scripts/lasso.R $(scaled)
 
 
 
