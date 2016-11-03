@@ -7,6 +7,9 @@ data=read.csv(paste("../../data/",args[1], sep=""))
 
 
 library(pls)
+load(file="../../data/test.RData")
+load(file="../../data/train.RData")
+
 plsr_obj=plsr(Balance~.,data=train, validation="CV")
 min(plsr_obj$validation$PRESS)
 

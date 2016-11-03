@@ -59,4 +59,3 @@ dev.off()
 
 
 
-ggplot(betas, aes(x=Coefficient Names, y=c(Coe) ))

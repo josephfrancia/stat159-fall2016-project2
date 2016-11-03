@@ -1,3 +1,10 @@
+#setwd("/Users/josephfrancia/Desktop/Fall_2016/Stats159/stat159-fall2016-project2/code/scripts")
+
+#Finding various lambda values and their associated MSE
+set.seed(0)
+load(file="../../data/test.RData")
+load(file="../../data/train.RData")
+
 args=commandArgs(trailingOnly=TRUE)
 data=read.csv(paste("../../data/",args[1], sep=""))
 
