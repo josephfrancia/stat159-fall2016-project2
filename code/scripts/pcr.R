@@ -11,7 +11,7 @@ test<-testset(data)
 library("pls")
 
 train_model<-pcr(Balance~.,data=as.data.frame(train),validation="CV")
-lasso_lowest_comp<-which.min(train_model$validation$PRESS)
+pcr_lowest_comp<-which.min(train_model$validation$PRESS)
 
 png(filename="images/validationplot-PCR.jpg")
 validationplot(train_model,val.type="MSEP")
@@ -24,7 +24,7 @@ predictions<-predict(full_train_model,ncomps=lowest_comp,newdata=as.data.frame(t
 mse_pcr<-mean((predictions-test[,"Balance"]^2))
 
 pcr_model<-pcr(Balance~.,data=as.data.frame(data))
-pcr_coefficients<-full_model$coefficients
+pcr_coefficients<-pcr_model$coefficients
 
-save(test_MSE,pcr_model,pcr_coefficients,lasso_lowest_comp,file="data/pcr.RData")
+save(mse_pcr,pcr_model,pcr_coefficients,pcr_lowest_comp,file="data/pcr.RData")
 
