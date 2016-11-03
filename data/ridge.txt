@@ -1,18 +1,19 @@
 [1] "Optimal Lambda for Ridge"
-[1] 0.07054802
+[1] 0.01747528
 [1] "MSE of Ridge with Optimal Lambda"
-[1] 0.1728398
+[1] 0.05368359
 [1] "Beta Coefficients"
-11 x 1 sparse Matrix of class "dgCMatrix"
+12 x 1 sparse Matrix of class "dgCMatrix"
                              s0
-Income             -0.410638462
-Limit               0.576767139
-Rating              0.576963480
-Cards               0.041770659
-Age                -0.043430538
-Education           0.013725590
-Gender.Male         0.008303664
-GenderFemale        0.021739579
-MarriedYes         -0.051672798
-EthnicityAsian      0.041521433
-EthnicityCaucasian  0.007399628
+Income             -0.544653620
+Limit               0.676171028
+Rating              0.612076944
+Cards               0.042982086
+Age                -0.028948401
+Education          -0.002358240
+Gender.Male        -0.057473988
+GenderFemale       -0.072599120
+StudentYes          0.762019769
+MarriedYes         -0.033832107
+EthnicityAsian      0.028871427
+EthnicityCaucasian  0.009513079

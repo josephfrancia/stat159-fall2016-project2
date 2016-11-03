@@ -1,173 +1,200 @@
 [1] "Optimal # of Components for Plsr"
-         1 comps  2 comps  3 comps 4 comps  5 comps  6 comps  7 comps  8 comps 9 comps 10 comps
-Balance 95.11326 52.07872 37.90946 36.2072 36.18519 36.40142 36.35847 36.32167 36.3413 36.62109
-        11 comps
-Balance 36.62428
+         1 comps  2 comps  3 comps  4 comps  5 comps  6 comps  7 comps  8 comps
+Balance 94.58921 44.83997 24.93341 20.16978 17.57848 15.10534 14.90885 14.79418
+         9 comps 10 comps 11 comps 12 comps
+Balance 14.79224 14.76735 14.68707   14.687
 [1] "MSE of Plsr with Optimal # of Components"
-[1] 0.1438972
+[1] 0.05042544
 [1] "Beta Coefficients"
 , , 1 comps
 
                          Balance
-Income              0.1774241011
-Limit               0.3297395318
-Rating              0.3304772650
-Cards               0.0330836323
-Age                 0.0007022318
-Education          -0.0030848658
-Gender.Male        -0.0041112773
-GenderFemale        0.0041112773
-MarriedYes         -0.0010590076
-EthnicityAsian     -0.0016386117
-EthnicityCaucasian -0.0006299392
+Income              0.1780301752
+Limit               0.3308659097
+Rating              0.3316061630
+Cards               0.0331966447
+Age                 0.0007046306
+Education          -0.0030954036
+Gender.Male        -0.0041253213
+GenderFemale        0.0041253213
+StudentYes          0.0298738569
+MarriedYes         -0.0010626251
+EthnicityAsian     -0.0016442092
+EthnicityCaucasian -0.0006320911
 
 , , 2 comps
 
-                         Balance
-Income             -0.3034138030
-Limit               0.5511236998
-Rating              0.5534102003
-Cards               0.1208064887
-Age                -0.2194854035
-Education           0.0393844592
-Gender.Male        -0.0207610005
-GenderFemale        0.0207610005
-MarriedYes         -0.0376113982
-EthnicityAsian      0.0137414324
-EthnicityCaucasian  0.0009860464
+                       Balance
+Income             -0.33378033
+Limit               0.56614850
+Rating              0.56845046
+Cards               0.12700144
+Age                -0.23278459
+Education           0.04053551
+Gender.Male        -0.02124197
+GenderFemale        0.02124197
+StudentYes          0.21604577
+MarriedYes         -0.03913136
+EthnicityAsian      0.01421502
+EthnicityCaucasian  0.00159957
 
 , , 3 comps
 
-                         Balance
-Income             -0.5760795941
-Limit               0.6629303219
-Rating              0.6613611537
-Cards               0.0438583556
-Age                -0.0321568194
-Education           0.0228161385
-Gender.Male        -0.0190345209
-GenderFemale        0.0190345209
-MarriedYes         -0.0760706191
-EthnicityAsian      0.0213616660
-EthnicityCaucasian  0.0002019627
+                        Balance
+Income             -0.641403371
+Limit               0.691745032
+Rating              0.689062109
+Cards               0.040357350
+Age                -0.014068422
+Education           0.014886272
+Gender.Male        -0.016146063
+GenderFemale        0.016146063
+StudentYes          0.396887057
+MarriedYes         -0.078024544
+EthnicityAsian      0.020120615
+EthnicityCaucasian  0.003321341
 
 , , 4 comps
 
                         Balance
-Income             -0.578217566
-Limit               0.664419233
-Rating              0.662993001
-Cards               0.031773340
-Age                -0.037403206
-Education           0.011304311
-Gender.Male        -0.007778333
-GenderFemale        0.007778333
-MarriedYes         -0.074162721
-EthnicityAsian      0.032538592
-EthnicityCaucasian -0.003608560
+Income             -0.624135733
+Limit               0.687767584
+Rating              0.681974524
+Cards              -0.007033960
+Age                -0.040830952
+Education          -0.038848364
+Gender.Male         0.040726091
+GenderFemale       -0.040726091
+StudentYes          0.700637002
+MarriedYes         -0.044103196
+EthnicityAsian      0.055678856
+EthnicityCaucasian -0.003400884
 
 , , 5 comps
 
                         Balance
-Income             -0.578877353
-Limit               0.663975064
-Rating              0.663721642
-Cards               0.036376723
-Age                -0.034923918
-Education           0.014843632
-Gender.Male        -0.001213733
-GenderFemale        0.001213733
-MarriedYes         -0.071989309
-EthnicityAsian      0.044694730
-EthnicityCaucasian -0.005386874
+Income             -0.605393068
+Limit               0.676548912
+Rating              0.671079457
+Cards               0.047799235
+Age                -0.018931102
+Education          -0.001121465
+Gender.Male         0.039703100
+GenderFemale       -0.039703100
+StudentYes          0.880532375
+MarriedYes         -0.023645575
+EthnicityAsian      0.065770253
+EthnicityCaucasian  0.003906844
 
 , , 6 comps
 
                         Balance
-Income             -0.578724080
-Limit               0.662672792
-Rating              0.665205845
-Cards               0.034650559
-Age                -0.034768606
-Education           0.015380995
-Gender.Male        -0.005173665
-GenderFemale        0.005173665
-MarriedYes         -0.069845406
-EthnicityAsian      0.062959789
-EthnicityCaucasian  0.002299547
+Income             -0.599015039
+Limit               0.675416080
+Rating              0.667032541
+Cards               0.038958694
+Age                -0.023065311
+Education          -0.004358586
+Gender.Male         0.009768038
+GenderFemale       -0.009768038
+StudentYes          0.918036935
+MarriedYes         -0.021165065
+EthnicityAsian      0.053596106
+EthnicityCaucasian  0.020915777
 
 , , 7 comps
 
                         Balance
-Income             -0.578739919
-Limit               0.661589985
-Rating              0.666152615
-Cards               0.036500614
-Age                -0.034284189
-Education           0.013072524
-Gender.Male        -0.004717971
-GenderFemale        0.004717971
-MarriedYes         -0.071061457
-EthnicityAsian      0.067348156
-EthnicityCaucasian  0.009635910
+Income             -0.598999194
+Limit               0.676263048
+Rating              0.665802686
+Cards               0.041771226
+Age                -0.022771168
+Education          -0.007920818
+Gender.Male         0.010681776
+GenderFemale       -0.010681776
+StudentYes          0.919231557
+MarriedYes         -0.022392511
+EthnicityAsian      0.048117227
+EthnicityCaucasian  0.025243054
 
 , , 8 comps
 
                         Balance
-Income             -0.578567215
-Limit               0.660870756
-Rating              0.666941269
-Cards               0.035447287
-Age                -0.034569143
-Education           0.014669723
-Gender.Male        -0.003820479
-GenderFemale        0.003820479
-MarriedYes         -0.072381243
-EthnicityAsian      0.068770931
-EthnicityCaucasian  0.013946208
+Income             -0.598825484
+Limit               0.677777686
+Rating              0.664313514
+Cards               0.040584014
+Age                -0.023202431
+Education          -0.005769024
+Gender.Male         0.011917549
+GenderFemale       -0.011917549
+StudentYes          0.919821055
+MarriedYes         -0.023203769
+EthnicityAsian      0.044020202
+EthnicityCaucasian  0.027313293
 
 , , 9 comps
 
                         Balance
-Income             -0.578351192
-Limit               0.658684119
-Rating              0.669007282
-Cards               0.035389857
-Age                -0.034694947
-Education           0.014697206
-Gender.Male        -0.003921476
-GenderFemale        0.003921476
-MarriedYes         -0.074953237
-EthnicityAsian      0.069466754
-EthnicityCaucasian  0.013581870
+Income             -0.598467992
+Limit               0.694678819
+Rating              0.646916483
+Cards               0.041497474
+Age                -0.023629525
+Education          -0.006119829
+Gender.Male         0.011503023
+GenderFemale       -0.011503023
+StudentYes          0.921855552
+MarriedYes         -0.024945079
+EthnicityAsian      0.031544017
+EthnicityCaucasian  0.015169308
 
 , , 10 comps
 
                         Balance
-Income             -0.578771147
-Limit               0.557951355
-Rating              0.770236818
-Cards               0.031028728
-Age                -0.034687741
-Education           0.015131867
-Gender.Male        -0.003836057
-GenderFemale        0.003836057
-MarriedYes         -0.074889260
-EthnicityAsian      0.069841859
-EthnicityCaucasian  0.013517906
+Income             -0.599819637
+Limit               0.735553785
+Rating              0.606762399
+Cards               0.043179363
+Age                -0.022924581
+Education          -0.006682446
+Gender.Male         0.011675750
+GenderFemale       -0.011675750
+StudentYes          0.921816606
+MarriedYes         -0.010961010
+EthnicityAsian      0.025818357
+EthnicityCaucasian  0.012990110
 
 , , 11 comps
 
+                        Balance
+Income             -0.598171486
+Limit               0.958438722
+Rating              0.382478949
+Cards               0.052864969
+Age                -0.023033397
+Education          -0.007469459
+Gender.Male         0.011585690
+GenderFemale       -0.011585690
+StudentYes          0.926023141
+MarriedYes         -0.018561688
+EthnicityAsian      0.036549983
+EthnicityCaucasian  0.021983317
+
+, , 12 comps
+
                          Balance
-Income             -5.788407e-01
-Limit               5.574014e-01
-Rating              7.708506e-01
-Cards               3.099978e-02
-Age                -3.468017e-02
-Education           1.513276e-02
-Gender.Male         1.360714e+08
-GenderFemale        1.360714e+08
-MarriedYes         -7.490095e-02
-EthnicityAsian      6.985020e-02
-EthnicityCaucasian  1.351566e-02
+Income             -5.981709e-01
+Limit               9.585301e-01
+Rating              3.823870e-01
+Cards               5.286896e-02
+Age                -2.303338e-02
+Education          -7.469922e-03
+Gender.Male         1.488343e+06
+GenderFemale        1.488343e+06
+StudentYes          9.260252e-01
+MarriedYes         -1.856042e-02
+EthnicityAsian      3.654892e-02
+EthnicityCaucasian  2.198323e-02
 

@@ -22,7 +22,7 @@ dev.off()
 lambda<-Lasso_CV$lambda.min
 train_model<-glmnet(x=as.matrix(train[,1:12]),y=as.matrix(train[,13]),alpha=1,lambda=lambda)
 
-mse_lasso<-mean(test[,13]-predict(train_model,newx=test[,1:12]))
+mse_lasso<-mean((test[,13]-predict(train_model,newx=as.matrix(test[,1:12])))^2)
 
 lasso_model<-glmnet(x=as.matrix(data[,1:12]),y=as.matrix(data[,13]),alpha=1,lambda=lambda)
 

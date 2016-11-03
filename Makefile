@@ -17,28 +17,29 @@ eda: data
 
 regressions:
 	make ols
-	make ridgemake plsr
+	make ridge
+	make plsr
 	make pcr
 	make lasso
 
 compare:
-	Rscript -e code/scripts/comparing_regressions.R
+	Rscript code/scripts/comparing_regressions.R
 
 ols: 
 	Rscript  code/scripts/least_squares.R $(scaled)
 
 
 ridge: 
-	Rscript -e code/scripts/ridge_regression.R $(scaled)
+	Rscript code/scripts/ridge_regression.R $(scaled)
 
 plsr: 
-	Rscript -e code/scripts/partial_regression.R $(scaled)
+	Rscript code/scripts/partial_regression.R $(scaled)
 
 pcr: 
-	Rscript -e code/scripts/pcr.R $(scaled)
+	Rscript code/scripts/pcr.R $(scaled)
 
 lasso: 
-	Rscript -e code/scripts/lasso.R $(scaled)
+	Rscript code/scripts/lasso.R $(scaled)
 
 
 
