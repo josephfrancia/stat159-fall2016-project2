@@ -1,9 +1,8 @@
-#setwd("/Users/josephfrancia/Desktop/Fall_2016/Stats159/stat159-fall2016-project2/code/scripts")
-#data=read.csv("/Users/josephfrancia/Desktop/Fall_2016/Stats159/stat159-fall2016-project2/data/Credit.csv")
-#data=model.matrix(~0+.,read.csv("http://www-bcf.usc.edu/~gareth/ISL/Credit.csv"))[,-1]
+args=commandArgs(trailingOnly=TRUE)
+data=read.csv(paste("../../data/",args[1], sep=""))
+
 library(corrplot)
 
-data=read.csv("http://www-bcf.usc.edu/~gareth/ISL/Credit.csv")
 png(filename="../../images/corrplot.png")
 corrplot(cor(data[,c(2:7,12)]))
 dev.off()

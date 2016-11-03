@@ -1,5 +1,7 @@
+args=commandArgs(trailingOnly=TRUE)
+
 ##Read in data
-unprocessed_data<-read.csv("http://www-bcf.usc.edu/~gareth/ISL/Credit.csv")
+unprocessed_data=read.csv(paste("../../",args[1], sep=""))
 
 ##Turn categorical variables into dummy variables
 processed<-model.matrix(~0+., unprocessed_data[,-9])

@@ -1,8 +1,0 @@
-#setwd("/Users/josephfrancia/Desktop/Fall_2016/Stats159/stat159-fall2016-project2/code/scripts")
-processed=read.csv("../../data/scaled-credit.csv")
-set.seed(0)
-shuffled_ind=sample(1:400, 400)
-train=processed[shuffled_ind[1:300],-c(1,2)]
-test=processed[shuffled_ind[301:400],-c(1,2)]
-
-save(train, test, file="../../data/test_train.RData")
