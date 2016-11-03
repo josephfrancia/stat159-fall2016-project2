@@ -5,6 +5,16 @@ set.seed(0)
 load(file="../../data/test.RData")
 load(file="../../data/train.RData")
 
+args=commandArgs(trailingOnly=TRUE)
+data=read.csv(paste("../../data/",args[1], sep=""))
+
+##Use training and test data functions to make
+##train
+##test
+
+
+#Finding various lambda values and their associated MSE
+set.seed(0)
 library(glmnet)
 grid=10^seq(10,-2, length=100)
 ridge_obj=cv.glmnet(as.matrix(train[,-12]), train[,12], alpha=0, lambda=grid, intercept=FALSE, standardize=FALSE)

@@ -3,11 +3,8 @@ title: "EDA"
 output: html_document
 ---
 
-#setwd("/Users/josephfrancia/Desktop/Fall_2016/Stats159/stat159-fall2016-project2/code/scripts")
-#data=read.csv("/Users/josephfrancia/Desktop/Fall_2016/Stats159/stat159-fall2016-project2/data/Credit.csv")
-
 args=commandArgs(trailingOnly=TRUE)
-data=read.csv(paste("../../data/",args[1], sep=""))
+data=read.csv(paste("../../",args[1], sep=""))
 data=data[,-1]
 
 
