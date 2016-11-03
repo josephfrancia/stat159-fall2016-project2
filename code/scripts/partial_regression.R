@@ -1,6 +1,12 @@
-#setwd("/Users/josephfrancia/Desktop/Fall_2016/Stats159/stat159-fall2016-project2/code/scripts")
+args=commandArgs(trailingOnly=TRUE)
+data=read.csv(paste("../../data/",args[1], sep=""))
+
+##Use training and test data functions to make
+##train
+##test
+
+
 library(pls)
-load(file="../../data/test_train.RData")
 plsr_obj=plsr(Balance~.,data=train, validation="CV")
 min(plsr_obj$validation$PRESS)
 
