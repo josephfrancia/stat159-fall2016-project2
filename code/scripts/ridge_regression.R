@@ -1,11 +1,11 @@
-#setwd("/Users/josephfrancia/Desktop/Fall_2016/Stats159/stat159-fall2016-project2/code/scripts")
+setwd("/Users/josephfrancia/Desktop/Fall_2016/Stats159/stat159-fall2016-project2/code/scripts")
 
 #Finding various lambda values and their associated MSE
 set.seed(0)
 load(file="../../data/test_train.RData")
 library(glmnet)
 grid=10^seq(10,-2, length=100)
-ridge_obj=cv.glmnet(as.matrix(train[,-c(1,2,14)]), train[,14], lambda=grid, intercept=FALSE, standardize=FALSE)
+ridge_obj=cv.glmnet(as.matrix(train[,-12]), train[,12], alpha=0, lambda=grid, intercept=FALSE, standardize=FALSE)
 
 #Ridge Plot
 png(filename="../../images/plot-ridge.png")
@@ -13,16 +13,18 @@ plot(ridge_obj)
 dev.off()
 
 #Computing MSE of Ridge with optimal lambda
-opt_ridge=glmnet(as.matrix(train[,-c(1,2,14)]), train[,14], lambda=ridge_obj$lambda.1se, intercept=FALSE, standardize=FALSE)
-y_hat=as.matrix(test[,-c(1,2,14)]) %*% opt_ridge$beta
-mse_ridge=mean(y_hat - test[,14])
+opt_ridge=glmnet(as.matrix(train[,-12]), train[,12], alpha=0,lambda=ridge_obj$lambda.1se, intercept=FALSE, standardize=FALSE)
+y_hat_ridge=predict(opt_ridge, newx=as.matrix(test[,-12]))
+mse_ridge=mean((y_hat_ridge - test[,12])^2)
 
 
 #Finding beta coefficients by fitting model on full dataset
-full_ridge=glmnet(as.matrix(rbind(train[,-c(1,2,14)], test[,-c(1,2,14)])), c(train[,14], test[,14]), lambda=ridge_obj$lambda.1se, intercept=FALSE, standardize=FALSE)
+full_ridge=glmnet(as.matrix(rbind(train[,-12], test[,-12])), alpha=0, c(train[,12], test[,12]), lambda=ridge_obj$lambda.1se, intercept=FALSE, standardize=FALSE)
+betas_ridge=full_ridge$beta
+lambda_ridge=ridge_obj$lambda.1se
 
 #Saving all relevant ridge objects
-save(ridge_obj, mse_ridge, full_ridge$beta, ridge_obj$lambda.1se, filename="../../data/ridge.RData")
+save(ridge_obj, mse_ridge, betas_ridge, lambda_ridge, file="../../data/ridge.RData")
 
 
 sink(file="../../data/ridge.txt")

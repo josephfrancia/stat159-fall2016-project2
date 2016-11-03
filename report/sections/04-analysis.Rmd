@@ -1,0 +1,42 @@
+---
+title: "04-analysis.Rmd"
+output: pdf_document
+---
+```{r, echo=FALSE}
+library(xtable)
+library(ggplot2)
+load("../../data/mse_table.RData")
+load("../../data/coef_table.RData")
+load(file="../../data/ridge.RData")
+load(file="../../data/plsr.RData")
+load(file="../../data/lm.RData")
+```
+
+#Analysis
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Now that we have a better understanding of each of these regression methods, lets look at the data in order to see how each regression performed: 
+<table border = 1>
+<tr>
+<td>
+```{r results='asis', echo=FALSE}
+  library(xtable)
+  print(xtable(mse), comment=F)
+```
+
+</td>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Lets take a look at how the estimated regression coefficients differ for each regression: 
+
+<table border = 1>
+<tr>
+<td>
+```{r results='asis', echo=FALSE}
+  print(xtable(betas), comment=F, scalebox='.75')
+```
+</td>
+
+```{r, echo=FALSE}
+betas.m <- melt(betas)
+ggplot(betas.m, aes(,)) +   
+  geom_bar(aes(fill = variable))
+```
