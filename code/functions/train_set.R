@@ -1,6 +1,5 @@
-#setwd("/Users/josephfrancia/Desktop/Fall_2016/Stats159/stat159-fall2016-project2/code/scripts")
-processed=read.csv("../../data/scaled-credit.csv")
-processed=processed[,-c(1,2)]
+#Function that splits data up, shuffling is done with the same seed for testset and trainset function
+#so that splitting is reproducible
 
 trainset=function(data){
   set.seed(0)
@@ -8,6 +7,3 @@ trainset=function(data){
   train=data[shuffled_ind[1:300],]
   return(train)
 }
-
-train=trainset(processed)
-save(train, file="../../data/train.RData")

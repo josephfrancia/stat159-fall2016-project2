@@ -1,9 +1,10 @@
 args=commandArgs(trailingOnly=TRUE)
-data=read.csv(paste("../../",args[1], sep=""))
+data=read.csv(args[1])[,-1]
+
 
 #split data into training and test set
-source(file=test_set.R)
-source(file=train_set.R)
+source(file="code/functions/test_set.R")
+source(file="code/functions/train_set.R")
 train<-trainset(data)
 test<-testset(data)
 
@@ -14,7 +15,7 @@ grid=10^seq(10,-2, length=100)
 ridge_obj=cv.glmnet(as.matrix(train[,-12]), train[,12], alpha=0, lambda=grid, intercept=FALSE, standardize=FALSE)
 
 #Ridge Plot
-png(filename="../../images/plot-ridge.png")
+png(filename="images/plot-ridge.png")
 plot(ridge_obj)
 dev.off()
 
@@ -30,10 +31,10 @@ betas_ridge=full_ridge$beta
 lambda_ridge=ridge_obj$lambda.1se
 
 #Saving all relevant ridge objects
-save(ridge_obj, mse_ridge, betas_ridge, lambda_ridge, file="../../data/ridge.RData")
+save(ridge_obj, mse_ridge, betas_ridge, lambda_ridge, file="data/ridge.RData")
 
 
-sink(file="../../data/ridge.txt")
+sink(file="data/ridge.txt")
 print("Optimal Lambda for Ridge")
 ridge_obj$lambda.1se
 

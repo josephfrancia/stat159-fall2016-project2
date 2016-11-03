@@ -1,11 +1,10 @@
-
 args=commandArgs(trailingOnly=TRUE)
-data=read.csv(paste("../../",args[1], sep=""))
+data=read.csv(args[1])[,-1]
 
 
 #split data into training and test set
-source(file=test_set.R)
-source(file=train_set.R)
+source(file="code/functions/test_set.R")
+source(file="code/functions/train_set.R")
 train<-trainset(data)
 test<-testset(data)
 
@@ -14,7 +13,7 @@ library("pls")
 train_model<-pcr(Balance~.,data=as.data.frame(train),validation="CV")
 lasso_lowest_comp<-which.min(train_model$validation$PRESS)
 
-png(filename="../../images/validationplot-PCR.jpg")
+png(filename="images/validationplot-PCR.jpg")
 validationplot(train_model,val.type="MSEP")
 dev.off
 
@@ -27,5 +26,5 @@ mse_pcr<-mean((predictions-test[,"Balance"]^2))
 pcr_model<-pcr(Balance~.,data=as.data.frame(data))
 pcr_coefficients<-full_model$coefficients
 
-save(test_MSE,pcr_model,pcr_coefficients,lasso_lowest_comp,file="../../data/pcr.RData")
+save(test_MSE,pcr_model,pcr_coefficients,lasso_lowest_comp,file="data/pcr.RData")
 
