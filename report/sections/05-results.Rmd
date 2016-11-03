@@ -34,9 +34,8 @@ load(file="../../data/coef_table.RData")
 ```{r results='asis', echo=FALSE}
   print(xtable(betas, caption="Beta Coefficients for Each Regression"), caption.placement='top', comment=F, scalebox='.75')
 ```
+
 </td>
-
-
 \begin{figure}[h]
 \caption{Coefficient Plot}
 \centering
