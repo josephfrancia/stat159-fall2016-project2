@@ -18,12 +18,12 @@ validationplot(train_model,val.type="MSEP")
 dev.off
 
 full_train_model<-pcr(Balance~.,data=as.data.frame(train),validation="CV")
-predictions<-predict(full_train_model,ncomps=lowest_comp,newdata=as.data.frame(test))
+predictions<-predict(full_train_model,ncomps=pcr_lowest_comp,newdata=as.data.frame(test))
 
 
 mse_pcr<-mean((predictions-test[,"Balance"]^2))
 
-pcr_model<-pcr(Balance~.,data=as.data.frame(data))
+pcr_model<-pcr(Balance~.,data=as.data.frame(data), ncomps=pcr_lowest_comp)
 pcr_coefficients<-pcr_model$coefficients
 
 save(mse_pcr,pcr_model,pcr_coefficients,pcr_lowest_comp,file="data/pcr.RData")
