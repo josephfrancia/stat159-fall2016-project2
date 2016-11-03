@@ -21,7 +21,9 @@ colnames(betas)=c("Coefficient Names","Coefficients for PLS Regression", "Coeffi
 save(betas,file="../../data/coef_table.RData")
 
 #Creating a barplot of coefficients
-plot(seq(1,3, by=1),as.numeric(betas[1,2:4]), xaxt="n", type="l", col="red",xlab="Regression Type", ylab="Coefficient Value", ylim=c(-1,1), main="Coefficient Values For Each Regression")
+
+png(filename="../../images/coefficient_plot.png")
+plot(seq(1,3, by=1),as.numeric(betas[1,2:4]), xaxt="n", type="l", col="red",xlab="Regression Type", ylab="Coefficient Value", ylim=c(-2,1), main="Coefficient Values For Each Regression")
 lines(seq(1,3, by=1),as.numeric(betas[2,2:4]), col="blue")
 lines(seq(1,3, by=1),as.numeric(betas[3,2:4]), col="red")
 lines(seq(1,3, by=1),as.numeric(betas[4,2:4]), col="yellow")
@@ -33,6 +35,13 @@ lines(seq(1,3, by=1),as.numeric(betas[9,2:4]), col="gray")
 lines(seq(1,3, by=1),as.numeric(betas[10,2:4]), col="brown")
 lines(seq(1,3, by=1),as.numeric(betas[11,2:4]), col="tomato")
 axis(side=1,labels=c("PLS", "OLS", "Ridge"), at=c(1,2,3))
+legend(1.5,-.7, bty="n", c("Income","Limit", "Rating", "Cards", "Age", "Education", "Gender.Male",
+                "GenderFemale","MarriedYes", "EthnicityAsian","EthnicityCaucasian"),
+                  lty=c(1,1),  lwd=c(2.5,2.5),col=c("blue","red", "yellow", "green","orange",
+                                                    "purple", "black", "gray","brown", "tomato"))
+                                                    
+                                           
+dev.off()
 
 
 

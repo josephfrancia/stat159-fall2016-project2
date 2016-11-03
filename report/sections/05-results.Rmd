@@ -10,6 +10,7 @@ load("../../data/coef_table.RData")
 load(file="../../data/ridge.RData")
 load(file="../../data/plsr.RData")
 load(file="../../data/lm.RData")
+load(file="../../data/coef_table.RData")
 ```
 
 #Results
@@ -36,13 +37,10 @@ load(file="../../data/lm.RData")
 </td>
 
 
+\begin{figure}[h]
+\caption{Coefficient Plot}
+\centering
+\includegraphics[width=250pt, height=255pt]{../../images/coefficient_plot.png}
+\end{figure}
 
-
-<table border = 1>
-<tr>
-<td>
-```{r results='asis', echo=FALSE}
-  print(xtable(betas, caption="Beta Coefficients for Each Regression"), caption.placement='top', comment=F, scalebox='.75')
-```
-</td>
 
