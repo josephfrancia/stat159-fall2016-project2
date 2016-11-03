@@ -4,7 +4,7 @@ lm_obj=lm(Balance~.,data=train)
 y_hat=predict(lm_obj, newdata=test[,-12])
 plot(y_hat-test[,12])
 mse_lm=mean((y_hat-test[,12])^2)
-save(lm_obj,file="../../data/lm.RData")
+save(lm_obj,mse_lm,file="../../data/lm.RData")
 
 betas_plsr
 betas_ridge

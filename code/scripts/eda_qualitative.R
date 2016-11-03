@@ -66,7 +66,7 @@ barplot(table(data$Student), main="Barchart of Student Variable", xlab="Student 
 dev.off()
 
 #Ethnicity Barchart
-png(filename="../../images/barchart-Studenet.png")
+png(filename="../../images/barchart-Ethnicity.png")
 barplot(table(data$Ethnicity), main="Barchart of Ethnicity", xlab="Ethnicity")
 dev.off()
 
