@@ -1,12 +1,12 @@
-#setwd("/Users/josephfrancia/Desktop/Fall_2016/Stats159/stat159-fall2016-project2/code/scripts")
-load(file="../../data/test.RData")
-load(file="../../data/train.RData")
-args=commandArgs(trailingOnly=TRUE)
-data=read.csv(paste("../../data/",args[1], sep=""))
 
-##Use training and test data functions to make
-##train
-##test
+args=commandArgs(trailingOnly=TRUE)
+data=read.csv(paste("../../",args[1], sep=""))
+
+#split data into training and test set
+source(file=test_set.R)
+source(file=train_set.R)
+train<-trainset(data)
+test<-testset(data)
 
 
 

@@ -2,9 +2,12 @@
 args=commandArgs(trailingOnly=TRUE)
 data=read.csv(paste("../../",args[1], sep=""))
 
-##Use training and test data functions to make
-##train
-##test
+
+#split data into training and test set
+source(file=test_set.R)
+source(file=train_set.R)
+train<-trainset(data)
+test<-testset(data)
 
 
 

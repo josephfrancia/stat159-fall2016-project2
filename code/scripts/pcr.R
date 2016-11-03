@@ -1,20 +1,13 @@
 
 args=commandArgs(trailingOnly=TRUE)
-data=read.csv(paste("../../data/",args[1], sep=""))
+data=read.csv(paste("../../",args[1], sep=""))
 
 
-unprocessed_data<-read.csv("http://www-bcf.usc.edu/~gareth/ISL/Credit.csv")
-processed<-model.matrix(~0+., unprocessed_data[,-9])
-for (i in c(2:7,13)){
-  processed[,i]<-scale(processed[,i])
-}
-
-##remove observation number ie first column
-data=processed[,-1]
-set.seed(0)
-sample<-sample(nrow(data),300)
-train<-data[sample,]
-test<-data[-sample,]
+#split data into training and test set
+source(file=test_set.R)
+source(file=train_set.R)
+train<-trainset(data)
+test<-testset(data)
 
 library("pls")
 

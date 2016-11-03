@@ -1,17 +1,11 @@
-#setwd("/Users/josephfrancia/Desktop/Fall_2016/Stats159/stat159-fall2016-project2/code/scripts")
-
-#Finding various lambda values and their associated MSE
-set.seed(0)
-load(file="../../data/test.RData")
-load(file="../../data/train.RData")
-
 args=commandArgs(trailingOnly=TRUE)
-data=read.csv(paste("../../data/",args[1], sep=""))
+data=read.csv(paste("../../",args[1], sep=""))
 
-##Use training and test data functions to make
-##train
-##test
-
+#split data into training and test set
+source(file=test_set.R)
+source(file=train_set.R)
+train<-trainset(data)
+test<-testset(data)
 
 #Finding various lambda values and their associated MSE
 set.seed(0)
