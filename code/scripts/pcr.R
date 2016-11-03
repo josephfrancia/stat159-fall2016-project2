@@ -20,9 +20,19 @@ library("pls")
 
 train_model<-pcr(Balance~.,data=as.data.frame(train),validation="CV")
 lowest_comp<-which.min(train_model$validation$PRESS)
+
+png(filename="../../images/validationplot-PCR.jpg")
 validationplot(train_model,val.type="MSEP")
-full_model<-pcr(Balance~.,data=as.data.frame(train),validation="CV")
-predictions<-predict(full_model,ncomps=lowest_comp,newdata=as.data.frame(test))
+dev.off
+
+full_train_model<-pcr(Balance~.,data=as.data.frame(train),validation="CV")
+predictions<-predict(full_train_model,ncomps=lowest_comp,newdata=as.data.frame(test))
+
 
 test_MSE<-mean((predictions-test[,"Balance"]^2))
+
+full_model<-pcr(Balance~.,data=as.data.frame(data))
+coefficients<-full_model$coefficients
+
+save(test_MSE,full_model,coefficients,file="../../data/pcr.RData")
 
