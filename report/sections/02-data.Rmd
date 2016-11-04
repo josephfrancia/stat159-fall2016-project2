@@ -2,12 +2,12 @@
 title: "02-discussion.Rmd"
 output: pdf_document
 ---
-```{r, echo=FALSE}
+```{r, echo=FALSE,warning=FALSE}
 library(xtable)
 #setwd("/Users/josephfrancia/Desktop/Fall_2016/Stats159/stat159-fall2016-project2/code/scripts")
 #data=read.csv("/Users/josephfrancia/Desktop/Fall_2016/Stats159/stat159-fall2016-project2/data/Credit.csv")
-load("../../data/freq_tables.RData")
-data=read.csv("../../data/Credit.csv")
+load("data/freq_tables.RData")
+data=read.csv("data/Credit.csv")
 data=data[,-1]
 
 ```
@@ -21,7 +21,7 @@ exploratory data analysis (EDA). Because we have both quantitative and qualitati
 <table border = 1>
 <tr>
 <td>
-```{r results='asis', echo=FALSE}
+```{r results='asis', echo=FALSE,warning =FALSE}
   print(xtable(as.data.frame(cor(data[, -c(7,8,9,10)])), caption="Correlation Matrix for the Quantitative Variables"), caption.placement='top', comment=F, scalebox='.75')
 ```
 </td>
@@ -29,14 +29,14 @@ exploratory data analysis (EDA). Because we have both quantitative and qualitati
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; As for the qualitative variables,  I created a different set of images and computed a different set of summary statistics. First, I created a frequency table for each qualitative variable. Next, I created a barchart for each qualitative variable. As an example, I've attached both a barchart and frequency table below for the Ethnicity variable, an explanatory variable. 
 
-```{r results='asis', echo=FALSE}
+```{r results='asis', echo=FALSE,warning=FALSE}
   print(xtable(freq_ethnicity, caption="Frequency Table for Ethnicity Variable"), caption.placement='top', comment=F, scalebox='.75')
 ```
 
 \begin{figure}[h]
 \caption{Barchart for Ethnicity Variable}
 \centering
-\includegraphics[width=150pt, height=125pt]{../../images/barchart-Ethnicity.png}
+\includegraphics[width=150pt, height=125pt]{images/barchart-Ethnicity.png}
 \end{figure}
 
 

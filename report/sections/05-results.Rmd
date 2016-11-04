@@ -2,26 +2,19 @@
 title: "05-analysis.Rmd"
 output: pdf_document
 ---
-```{r, echo=FALSE}
-library(xtable)
-library(ggplot2)
-load("../../data/mse_table.RData")
-load("../../data/coef_table.RData")
-load(file="../../data/ridge.RData")
-load(file="../../data/plsr.RData")
-load(file="../../data/lm.RData")
-load(file="../../data/coef_table.RData")
-```
 
 #Results
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Before we look at regression performance, lets take a look at how the estimated regression coefficients differ for each regression: 
 
-```{r, fig.width=50, echo =FALSE}
+```{r, fig.width=50, echo =FALSE,warning=FALSE}
+library(xtable)
+library(ggplot2)
+load("data/betas.Rdata")
 knitr::kable(betas, digits = 3, caption = 'A table of coefficients', width=50)
 ```
 
-![Coefficient Plot](../../images/coefficient_plot.png)
+![Coefficient Plot](images/coefficient_plot.png)
 
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; As one can see with the above table and plot, Lasso Regression provides us a sparse estimator. In other words, Lasso Regression provides a solution in which multiple beta coefficients are zero. Although Ridge does not provide a sparse solution, it does tend to shrink the beta coefficients towards zero. This is why both Lasso and Ridge are called shrinkage methods.  
@@ -29,4 +22,4 @@ knitr::kable(betas, digits = 3, caption = 'A table of coefficients', width=50)
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Now that we have a better understanding of each of these regression methods, lets look at the data in order to see how each regression performed: 
 
-![MSE of Regressions](../../images/mse.png)
+![MSE of Regressions](images/mse.png)
