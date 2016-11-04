@@ -2,10 +2,8 @@
 title: "00-abstract.Rmd"
 output: html_document
 ---
-Joseph Francia: SID
 
-Nicholas Saber: 23845193
-
+Joseph Francia and Nicholas Saber  
 
 Professor Gaston Sanchez  
 Stats 159  

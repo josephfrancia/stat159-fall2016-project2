@@ -1,0 +1,8 @@
+---
+title: "06-conclusion.Rmd"
+output: html_document
+---
+
+##Conclusion 
+
+While least-squares regression seems like it would be the best regression method to use for prediction purposes, this is probably only be the case for this dataset. Ridge and Lasso, thanks to their penalty on model complexity, actually usually outperform least-squares prediction in prediction. As for the dimension-reduction regression methods, Principal component regression is significantly inferior to partial least squares regression. This is likely because, unlike principal component regression, partial least squares regression takes into account how each explanatory variable interacts with the response variable. 

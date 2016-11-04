@@ -1,5 +1,5 @@
 args=commandArgs(trailingOnly=TRUE)
-data=read.csv(args[1])[,-1]
+data=read.csv(args[1])[,-c(1,2)]
 
 
 #split data into training and test set
@@ -18,7 +18,7 @@ validationplot(train_model,val.type="MSEP")
 dev.off
 
 full_train_model<-pcr(Balance~.,data=as.data.frame(train),validation="CV")
-predictions<-predict(full_train_model,ncomps=pcr_lowest_comp,newdata=as.data.frame(test))
+predictions<-predict(full_train_model,ncomps=pcr_lowest_comp,newdata=as.data.frame(test[,-12]))
 
 
 mse_pcr<-mean((predictions-test[,"Balance"])^2)
