@@ -1,0 +1,77 @@
+                   Statistics for Income Variable
+Min                                      10.35400
+Max                                     186.63400
+Median                                   33.11550
+Mean                                     45.21889
+First Quartile                           21.01000
+3rd Quartile                             57.47000
+IQR                                      36.46000
+Range                                   176.25000
+Standard Deviation                       35.24427
+                   Statistics for Rating Variable
+Min                                       93.0000
+Max                                      982.0000
+Median                                   344.0000
+Mean                                     354.9400
+First Quartile                           247.2000
+3rd Quartile                             437.2000
+IQR                                      190.0000
+Range                                    889.0000
+Standard Deviation                       154.7241
+                   Statistics for Cards Variable
+Min                                     1.000000
+Max                                     9.000000
+Median                                  3.000000
+Mean                                    2.957500
+First Quartile                          2.000000
+3rd Quartile                            4.000000
+IQR                                     2.000000
+Range                                   8.000000
+Standard Deviation                      1.371275
+                   Statistics for Age Variable
+Min                                   23.00000
+Max                                   98.00000
+Median                                56.00000
+Mean                                  55.66750
+First Quartile                        41.75000
+3rd Quartile                          70.00000
+IQR                                   28.25000
+Range                                 75.00000
+Standard Deviation                    17.24981
+                   Statistics for Education Variable
+Min                                         5.000000
+Max                                        20.000000
+Median                                     14.000000
+Mean                                       13.450000
+First Quartile                             11.000000
+3rd Quartile                               16.000000
+IQR                                         5.000000
+Range                                      15.000000
+Standard Deviation                          3.125207
+                   Statistics for Balance Variable
+Min                                         0.0000
+Max                                      1999.0000
+Median                                    459.5000
+Mean                                      520.0150
+First Quartile                             68.7500
+3rd Quartile                              863.0000
+IQR                                       794.2500
+Range                                    1999.0000
+Standard Deviation                        459.7589
+[1] "Matrix of Correlations"
+               Income       Limit      Rating       Cards         Age
+Income     1.00000000  0.79208834  0.79137763 -0.01827261 0.175338403
+Limit      0.79208834  1.00000000  0.99687974  0.01023133 0.100887922
+Rating     0.79137763  0.99687974  1.00000000  0.05323903 0.103164996
+Cards     -0.01827261  0.01023133  0.05323903  1.00000000 0.042948288
+Age        0.17533840  0.10088792  0.10316500  0.04294829 1.000000000
+Education -0.02769198 -0.02354853 -0.03013563 -0.05108422 0.003619285
+Balance    0.46365646  0.86169727  0.86362516  0.08645635 0.001835119
+             Education      Balance
+Income    -0.027691982  0.463656457
+Limit     -0.023548534  0.861697267
+Rating    -0.030135627  0.863625161
+Cards     -0.051084217  0.086456347
+Age        0.003619285  0.001835119
+Education  1.000000000 -0.008061576
+Balance   -0.008061576  1.000000000

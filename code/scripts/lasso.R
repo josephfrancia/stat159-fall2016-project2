@@ -27,8 +27,8 @@ train_model<-glmnet(x=as.matrix(train[,1:12]),y=as.matrix(train[,13]),alpha=1,la
 mse_lasso<-mean((test[,13]-predict(train_model,newx=as.matrix(test[,1:12])))^2)
 
 lasso_model<-glmnet(x=as.matrix(data[,1:12]),y=as.matrix(data[,13]),alpha=1,lambda=lambda)
-
-save(mse_lasso,lasso_model,file="data/lasso.RData")
+betas_lasso=as.numeric(lasso_model$beta)
+save(mse_lasso,lasso_model,betas_lasso,file="data/lasso.RData")
 
 
 

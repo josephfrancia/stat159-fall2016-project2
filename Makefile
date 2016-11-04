@@ -21,6 +21,7 @@ regressions:
 	make plsr
 	make pcr
 	make lasso
+	make compare
 
 compare:
 	Rscript code/scripts/comparing_regressions.R

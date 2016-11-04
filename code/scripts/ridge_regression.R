@@ -27,7 +27,7 @@ mse_ridge=mean((y_hat_ridge - test[,13])^2)
 
 #Finding beta coefficients by fitting model on full dataset
 full_ridge=glmnet(as.matrix(rbind(train[,-13], test[,-13])), alpha=0, c(train[,13], test[,13]), lambda=ridge_obj$lambda.1se, intercept=FALSE, standardize=FALSE)
-betas_ridge=full_ridge$beta
+betas_ridge=as.numeric(full_ridge$beta)
 lambda_ridge=ridge_obj$lambda.1se
 
 #Saving all relevant ridge objects

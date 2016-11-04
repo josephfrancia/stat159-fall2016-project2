@@ -1,13 +1,10 @@
 #setwd("/Users/josephfrancia/Desktop/Fall_2016/Stats159/stat159-fall2016-project2")
-load(file="data/test_train.RData")
 load(file="data/ridge.RData")
 load(file="data/plsr.RData")
 load(file="data/lm.RData")
 load(file="data/pcr.RData")
 load(file="data/lasso.RData")
 
-
-library(reshape2)
 
 #Creating MSE table
 mse=data.frame(c(mse_lm, mse_ridge, mse_plsr,mse_pcr,mse_lasso))
@@ -17,12 +14,12 @@ save(mse,file="data/mse_table.RData")
 
 #Creating table of coefficients
 betas_plsr=as.data.frame(betas_plsr)
-betas_plsr=betas_plsr
-betas_ridge=as.numeric(betas_ridge)
+betas_plsr=betas_plsr[,5]
+betas_ridge=betas_ridge
 betas_ls=as.numeric(lm_obj$coefficients)[2:13]
 betas_pcr=as.data.frame(pcr_coefficients)
 betas_pcr=betas_pcr[,pcr_lowest_comp]
-betas_lasso=as.numeric(lasso_model$beta)
+betas_lasso=betas_lasso
 
 
 beta_names=c("Income", "Limit", "Rating", "Cards", "Age", "Education", "Gender.Male", "GenderFemale","StudentYes", "MarriedYes", "EthnicityAsian", "EthnicityCaucasian")
