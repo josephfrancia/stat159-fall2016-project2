@@ -23,7 +23,7 @@ betas_lasso=betas_lasso
 beta_names=c("Income", "Limit", "Rating", "Cards", "Age", "Education", "GenderFemale","StudentYes", "MarriedYes", "EthnicityAsian", "EthnicityCaucasian")
 betas=data.frame(beta_names,betas_plsr, betas_ls, betas_ridge,betas_pcr,betas_lasso)
 colnames(betas)=c("Coefficient Names","Coefficients for PLS Regression", "Coefficients for Least Squares", "Coefficients for Ridge Regression","Coefficients for PCR","Coefficients for Lasso Regression")
-
+save(betas,file="data/mse_table.RData")
 
 
 #png("images/beta.png")
