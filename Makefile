@@ -1,7 +1,7 @@
 scaled = data/scaled-credit.csv
 
 
-.PHONY: all ols ridge plsr pcr lasso compare code/script/pre_modeling_processing.R compare data/credit.csv report
+.PHONY: all ols ridge plsr pcr lasso compare code/script/pre_modeling_processing.R compare data/credit.csv report slides
 
 
 all: data eda regressions compare report
@@ -54,20 +54,26 @@ lasso:
 
 #convert report into pdf
 report:
-	cd report/sections; Rscript -e "require(knitr); require(markdown); knit('00-abstract.Rmd', '00-abstract.md')"
-	cd report/sections; Rscript -e "require(knitr); require(markdown); knit('01-introduction.Rmd', '01-introduction.md')"
-	cd report/sections; Rscript -e "require(knitr); require(markdown); knit('02-data.Rmd', '02-data.md')"
-	cd report/sections; Rscript -e "require(knitr); require(rmarkdown); knit('03-methods.Rmd', '03-methods.md')"
-	cd report/sections; Rscript -e "require(knitr); require(rmarkdown); knit('04-analysis.Rmd', '04-analysis.md')"
-	cd report/sections; Rscript -e "require(knitr); require(rmarkdown); knit('05-results.Rmd', '05-results.md')"
-	cd report/sections; Rscript -e "require(knitr); require(rmarkdown); knit('06-conclusion.Rmd', '06-conclusion.md')"
-	cd report/sections; pandoc *.md -o report.pdf
-	cd report/sections; rm *.md
+	Rscript -e "require(knitr); require(markdown); knit('report/sections/00-abstract.Rmd', '00-abstract.md')"
+	Rscript -e "require(knitr); require(markdown); knit('report/sections/01-introduction.Rmd', '01-introduction.md')"
+	Rscript -e "require(knitr); require(markdown); knit('report/sections/02-data.Rmd', '02-data.md')"
+	Rscript -e "require(knitr); require(rmarkdown); knit('report/sections/03-methods.Rmd', '03-methods.md')"
+	Rscript -e "require(knitr); require(rmarkdown); knit('report/sections/04-analysis.Rmd', '04-analysis.md')"
+	Rscript -e "require(knitr); require(rmarkdown); knit('report/sections/05-results.Rmd', '05-results.md')"
+	Rscript -e "require(knitr); require(rmarkdown); knit('report/sections/06-conclusion.Rmd', '06-conclusion.md')"
+	pandoc *.md -o report.pdf
+	rm *.md
 
+#knit slides, kinda buggy right now
+slides:
+	Rscript -e "require(knitr); require(markdown); knit('slides/Slides.Rmd', 'slides.md')"
+	pandoc slides.md -o slides.pdf
+	rm slides.md
 clean:
 	cd report/sections; rm *.pdf
 	cd images; rm *
 	cd data; rm *
+	rm slides.pdf
 
 
 

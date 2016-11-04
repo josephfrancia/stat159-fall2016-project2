@@ -1,4 +1,3 @@
-#setwd("/Users/josephfrancia/Desktop/Fall_2016/Stats159/stat159-fall2016-project2")
 load(file="data/ridge.RData")
 load(file="data/plsr.RData")
 load(file="data/lm.RData")
@@ -24,6 +23,7 @@ betas=data.frame(betas_plsr, betas_ls, betas_ridge,betas_pcr,betas_lasso)
 colnames(betas)=c("Coefficients for PLS Regression", "Coefficients for Least Squares", "Coefficients for Ridge Regression","Coefficients for PCR","Coefficients for Lasso Regression")
 rownames(betas)=c("Income", "Limit", "Rating", "Cards", "Age", "Education", "GenderFemale", "StudentYes","MarriedYes", "EthnicityAsian", "Ethnicity Caucasian")
 save(betas, file="data/betas.RData")
+
 
 #png("images/beta.png")
 #grid.table(betas)
