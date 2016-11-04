@@ -2,7 +2,9 @@
 title: "00-abstract.Rmd"
 output: html_document
 ---
+
 Joseph Francia and Nicholas Saber  
+
 Professor Gaston Sanchez  
 Stats 159  
 4 November 2016  

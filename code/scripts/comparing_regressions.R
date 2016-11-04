@@ -14,16 +14,14 @@ save(mse,file="data/mse_table.RData")
 
 #Creating table of coefficients
 betas_plsr=as.data.frame(betas_plsr)
-betas_plsr=betas_plsr
+betas_plsr=betas_plsr[,5] #lowest number of components is 5
 betas_ridge=betas_ridge
 betas_ls=as.numeric(lm_obj$coefficients)[2:12]
 betas_pcr=as.data.frame(pcr_coefficients)
 betas_pcr=betas_pcr[,pcr_lowest_comp]
 betas_lasso=betas_lasso
-beta_names=c("Income", "Limit", "Rating", "Cards", "Age", "Education", "GenderFemale","StudentYes", "MarriedYes", "EthnicityAsian", "EthnicityCaucasian")
-betas=data.frame(beta_names,betas_plsr, betas_ls, betas_ridge,betas_pcr,betas_lasso)
-colnames(betas)=c("Coefficient Names","Coefficients for PLS Regression", "Coefficients for Least Squares", "Coefficients for Ridge Regression","Coefficients for PCR","Coefficients for Lasso Regression")
-
+betas=data.frame(betas_plsr[-1], betas_ls, betas_ridge,betas_pcr,betas_lasso)
+colnames(betas)=c("Coefficients for PLS Regression", "Coefficients for Least Squares", "Coefficients for Ridge Regression","Coefficients for PCR","Coefficients for Lasso Regression")
 
 
 #png("images/beta.png")

@@ -17,9 +17,8 @@ load(file="../../data/coef_table.RData")
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Before we look at regression performance, lets take a look at how the estimated regression coefficients differ for each regression: 
 
-```{r, fig.width=50}
+```{r, fig.width=50, echo =FALSE}
 knitr::kable(betas, digits = 3, caption = 'A table of coefficients', width=50)
-
 ```
 
 ![Coefficient Plot](../../images/coefficient_plot.png)
