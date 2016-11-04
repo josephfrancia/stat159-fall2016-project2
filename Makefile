@@ -12,8 +12,8 @@ data: data/credit.csv code/script/pre_modeling_processing.R
 
 
 eda: data
-	Rscript -e code/script/eda_qualitative.R $(scaled)
-	Rscript -e code/script/eda_quantitative.R $(scaled)
+	Rscript code/scripts/eda_qualitative.R data/credit.csv
+	Rscript code/scripts/eda_quantitative.R data/credit.csv
 
 regressions:
 	make ols

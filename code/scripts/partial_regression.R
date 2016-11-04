@@ -31,16 +31,6 @@ betas_plsr=full_plsr$coefficients
 #Saving all relevant plsr objects
 save(plsr_obj, mse_plsr, betas_plsr, full_plsr, file="data/plsr.RData")
 
-sink(file="data/plsr.txt")
-print("Optimal # of Components for Plsr")
-plsr_obj$validation$PRESS
-
-print("MSE of Plsr with Optimal # of Components")
-mse_plsr
-
-print("Beta Coefficients")
-full_plsr$coefficients
-sink()
 
 
 

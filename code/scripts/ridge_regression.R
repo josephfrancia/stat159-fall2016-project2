@@ -34,15 +34,4 @@ lambda_ridge=ridge_obj$lambda.1se
 save(ridge_obj, mse_ridge, betas_ridge, lambda_ridge, file="data/ridge.RData")
 
 
-sink(file="data/ridge.txt")
-print("Optimal Lambda for Ridge")
-ridge_obj$lambda.1se
-
-print("MSE of Ridge with Optimal Lambda")
-mse_ridge
-
-print("Beta Coefficients")
-full_ridge$beta
-sink()
-
 

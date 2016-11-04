@@ -21,7 +21,7 @@ full_train_model<-pcr(Balance~.,data=as.data.frame(train),validation="CV")
 predictions<-predict(full_train_model,ncomps=pcr_lowest_comp,newdata=as.data.frame(test))
 
 
-mse_pcr<-mean((predictions-test[,"Balance"]^2))
+mse_pcr<-mean((predictions-test[,"Balance"])^2)
 
 pcr_model<-pcr(Balance~.,data=as.data.frame(data), ncomps=pcr_lowest_comp)
 pcr_coefficients<-pcr_model$coefficients

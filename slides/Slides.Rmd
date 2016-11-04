@@ -31,6 +31,7 @@ Now, we're ready to run our regressions on our dataset.
 ##Methodology (Part 1)
 After dividing our data into training and test sets, we're now ready to run our regressions. These are the five regressions that we will be analyzing for this project:  
   
+  
 1. Least Squares Regression  
 2. Ridge Regression  
 3. Lasso Regression  
