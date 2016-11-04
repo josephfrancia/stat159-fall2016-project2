@@ -1,7 +1,7 @@
 scaled = data/scaled-credit.csv
 
 
-.PHONY: all ols ridge plsr pcr lasso compare code/script/pre_modeling_processing.R compare data/credit.csv report
+.PHONY: all ols ridge plsr pcr lasso compare code/script/pre_modeling_processing.R compare data/credit.csv report slides
 
 
 all: data eda regressions compare report
@@ -63,10 +63,16 @@ report:
 	cd report/sections; pandoc *.md -o report.pdf
 	cd report/sections; rm *.md
 
+#knit slides, kinda buggy right now
+slides:
+	Rscript -e "require(knitr); require(markdown); knit('slides/Slides.Rmd', 'slides.md')"
+	pandoc slides.md -o slides.pdf
+	rm slides.md
 clean:
 	cd report/sections; rm *.pdf
 	cd images; rm *
 	cd data; rm *
+	rm slides.pdf
 
 
 
