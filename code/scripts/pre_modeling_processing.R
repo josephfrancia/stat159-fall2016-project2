@@ -1,5 +1,5 @@
 #setwd("/Users/josephfrancia/Desktop/Fall_2016/Stats159/stat159-fall2016-project2")
-#data=read.csv("/Users/josephfrancia/Desktop/Fall_2016/Stats159/stat159-fall2016-project2/data/Credit.csv")[,-1]
+#unprocessed_data=read.csv("/Users/josephfrancia/Desktop/Fall_2016/Stats159/stat159-fall2016-project2/data/Credit.csv")[,-1]
 
 args=commandArgs(trailingOnly=TRUE)
 unprocessed_data=read.csv(args[1])[,-1]
@@ -9,7 +9,7 @@ processed=model.matrix(~., unprocessed_data)
 
 ##normalize non-categorical explanotory variables
 
-for (i in c(1:6,13)){
+for (i in c(1:7,13)){
   processed[,i]<-scale(processed[,i])
 }
 

@@ -57,7 +57,6 @@ legend(1.5,-.7, bty="n", c("Income","Limit", "Rating", "Cards", "Age", "Educatio
                   lty=c(1,1),  lwd=c(2.5,2.5),col=c("deeppink","blue","red", "yellow", "green","orange",
                                                     "purple", "black", "gray","brown", "tomato"))
                                                     
-                                           
 dev.off()
 
 

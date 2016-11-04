@@ -1,5 +1,6 @@
 args=commandArgs(trailingOnly=TRUE)
 data=read.csv(args[1])[,-c(1,2)]
+#data=read.csv("/Users/josephfrancia/Desktop/Fall_2016/Stats159/stat159-fall2016-project2/data/scaled-Credit.csv")[,-c(1,2)]
 
 
 #split data into training and test set
