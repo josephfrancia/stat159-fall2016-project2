@@ -1,5 +1,4 @@
 ---
-title: "02-discussion.Rmd"
 output: pdf_document
 ---
 ```{r, echo=FALSE}

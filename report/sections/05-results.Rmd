@@ -1,5 +1,4 @@
 ---
-title: "05-analysis.Rmd"
 output: pdf_document
 ---
 ```{r, echo=FALSE}
@@ -10,7 +9,7 @@ load("../../data/coef_table.RData")
 load(file="../../data/ridge.RData")
 load(file="../../data/plsr.RData")
 load(file="../../data/lm.RData")
-load(file="../../data/coef_table.RData")
+load(file="../../data/betas.RData")
 ```
 
 #Results
