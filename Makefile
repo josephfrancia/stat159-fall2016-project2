@@ -1,6 +1,6 @@
 scaled = data/scaled-credit.csv
 
-.PHONY: all ols ridge plsr pcr lasso compare code/script/pre_modeling_processing.R
+.PHONY: all ols ridge plsr pcr lasso compare code/script/pre_modeling_processing.R compare data/credit.csv
 
 all:
 
