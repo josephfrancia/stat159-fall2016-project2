@@ -70,7 +70,7 @@ slides:
 	pandoc slides.md -o slides.pdf
 	rm slides.md
 clean:
-	cd report/sections; rm *.pdf
+	rm *.pdf
 	cd images; rm *
 	cd data; rm *
 	rm slides.pdf
