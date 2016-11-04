@@ -3,10 +3,11 @@ output: pdf_document
 ---
 ```{r, echo=FALSE,warning=FALSE, message=FALSE}
 library(xtable)
+library(ggplot2)
 #setwd("/Users/josephfrancia/Desktop/Fall_2016/Stats159/stat159-fall2016-project2/code/scripts")
 #data=read.csv("/Users/josephfrancia/Desktop/Fall_2016/Stats159/stat159-fall2016-project2/data/Credit.csv")
-load("data/freq_tables.RData")
-data=read.csv("data/Credit.csv")
+load("../../data/freq_tables.RData")
+data=read.csv("../../data/Credit.csv")
 data=data[,-1]
 
 ```
@@ -17,19 +18,19 @@ data=data[,-1]
 exploratory data analysis (EDA). Because we have both quantitative and qualitative explanatory variables in our dataset, our EDA for each variable would differ, depending on whether or not the variable was quantitative.  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; For the quantitative variables, I created images, and we also computed summary statistics. More specifically, we computed each quantitative variable's standard deviation, interquartile range, range, and median. In addition, we also computed a histogram and a boxplot for each quantitative veariable. Finally, I created a correlation plot and a regression object between all the quantitative variables as well. I've shown the correlation plot for the quantitative variables below: 
 
-<table border = 1>
-<tr>
-<td>
-```{r results='asis', echo=FALSE,warning =FALSE}
-  print(xtable(as.data.frame(cor(data[, -c(7,8,9,10)])), caption="Correlation Matrix for the Quantitative Variables"), caption.placement='top', comment=F, scalebox='.75')
+
+```{r, fig.width=50, echo =FALSE,warning=FALSE, message=FALSE}
+knitr::kable(as.data.frame(cor(data[,-c(7,8,9,10)])), digits = 3, caption = 'Correlation Matrix for the Quantitative Variables', caption.placement='top',width=50)
 ```
-</td>
+
 
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; As for the qualitative variables,  I created a different set of images and computed a different set of summary statistics. First, I created a frequency table for each qualitative variable. Next, I created a barchart for each qualitative variable. As an example, I've attached both a barchart and frequency table below for the Ethnicity variable, an explanatory variable. 
 
-```{r results='asis', echo=FALSE,warning=FALSE}
-  print(xtable(freq_ethnicity, caption="Frequency Table for Ethnicity Variable"), caption.placement='top', comment=F, scalebox='.75')
+```{r, fig.width=50, echo =FALSE,warning=FALSE, message=FALSE}
+
+knitr::kable(freq_ethnicity, digits = 3, caption = 'Frequency Table for Ethnicity Variable', caption.placement='top',width=50)
+
 ```
 
 \begin{figure}[h]
@@ -39,4 +40,6 @@ exploratory data analysis (EDA). Because we have both quantitative and qualitati
 \end{figure}
 
 
+  
+    
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; After doing our exploratory data analysis, we divided our data into training and test sets. The idea behind training and test sets is that we will run our regression on the training data set, and we will then test the accuracy of our regressions on our test data set. I did this by first creating a sequence of numbers, ordered 1:400. Then, I used the *sample* function in order to shuffle this ordered sequence. I then took the first 300 values of this shuffled sequence, and I marked these values as indices corresponding to our training set. The final 100 values of this shuffled sequence, meanwhile, corresponded to the indices in our test set.

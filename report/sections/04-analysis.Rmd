@@ -1,7 +1,6 @@
 ---
 output: pdf_document
 ---
----
 
 #Analysis
 
