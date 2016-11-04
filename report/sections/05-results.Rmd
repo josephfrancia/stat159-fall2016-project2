@@ -1,5 +1,5 @@
 ---
-title: "04-analysis.Rmd"
+title: "05-analysis.Rmd"
 output: pdf_document
 ---
 ```{r, echo=FALSE}
@@ -15,31 +15,19 @@ load(file="../../data/coef_table.RData")
 
 #Results
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Now that we have a better understanding of each of these regression methods, lets look at the data in order to see how each regression performed: 
-<table border = 1>
-<tr>
-<td>
-```{r results='asis', echo=FALSE}
-  library(xtable)
-  print(xtable(mse, caption="Mean Squared Error For Each Regression",digits=6) ,caption.placement='top', comment=F)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Before we look at regression performance, lets take a look at how the estimated regression coefficients differ for each regression: 
+
+```{r, fig.width=50}
+knitr::kable(betas, digits = 3, caption = 'A table of coefficients', width=50)
+
 ```
 
-</td>
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Lets take a look at how the estimated regression coefficients differ for each regression: 
-
-<table border = 1>
-<tr>
-<td>
-```{r results='asis', echo=FALSE}
-  print(xtable(betas, caption="Beta Coefficients for Each Regression"),    caption.placement='top', comment=F, scalebox='.65')
-```
-
-</td>
-\begin{figure}[h]
-\caption{Coefficient Plot}
-\centering
-\includegraphics[width=250pt, height=255pt]{../../images/coefficient_plot.png}
-\end{figure}
+![Coefficient Plot](../../images/coefficient_plot.png)
 
 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; As one can see with the above table and plot, Lasso Regression provides us a sparse estimator. In other words, Lasso Regression provides a solution in which multiple beta coefficients are zero. Although Ridge does not provide a sparse solution, it does tend to shrink the beta coefficients towards zero. This is why both Lasso and Ridge are called shrinkage methods.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Thanks to the above visual, it's also easy to tell that there are four variables that have a strong relationship with the response variable (Credit Card Balance). These variables have beta coefficients that are large in magnitude and they are Income, Limit, Rating, and Student. The Limit, Rating, and Student variables are strongly correlated with Credit Card Balance while the Income variable is significantly negatively correlated with Credit Card Balance. 
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Now that we have a better understanding of each of these regression methods, lets look at the data in order to see how each regression performed: 
+
+![MSE of Regressions](../../images/mse.png)

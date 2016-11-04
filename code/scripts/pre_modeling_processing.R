@@ -4,10 +4,8 @@
 args=commandArgs(trailingOnly=TRUE)
 unprocessed_data=read.csv(args[1])[,-1]
 
-
 ##Turn categorical variables into dummy variables
-processed<-model.matrix(~0+., unprocessed_data)
-
+processed=model.matrix(~., unprocessed_data)
 
 ##normalize non-categorical explanotory variables
 

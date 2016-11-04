@@ -1,3 +1,4 @@
+
 ---
 title: "Predictive Modeling Process"
 author: Joseph Francia and Nicholas Saber
@@ -14,8 +15,9 @@ We will be using a dataset where the response variable is an individual's credit
 ## Exploratory Data Analysis
 Before we ran any sort of regression on the dataset, we first engaged in some exploratory data analysis by making histograms, boxplots, and summary statistics for the variables in our dataset. Here's a boxplot of our Balance variable, which is our response variable.
 
-
-<img src="../images/boxplot-Balance.png" width="350" length="300" />
+<div class="centered">
+<img src="../images/boxplot-Balance.png" width="300" length="100" /> 
+</div>
 
 ## Preparing our Data for Regression Analysis
 In order for us to be able to run our regressions, we first need to modify the data so it's suitable for regression analysis. We manipulated our data in the following ways:  
@@ -64,14 +66,13 @@ While informative, this coefficient plot doesn't tell us about the predictive pe
 ```{r results='asis', echo=FALSE}
   library(xtable)
   load(file="../data/mse_table.RData")
-  x=xtable(mse)
+  x=xtable(mse, digits=6)
   print(x, type="html", comment=F)
 ```
-  
-  
-As one can see, partial least squares regression performed the best, and its average squared error was a mere .14. Ridge regression, meanwhile, had the highest average squared error with .17.
+<p>&nbsp; 
+
+As one can see, least squares regression performed the best, and its average squared error was a mere .047. Principal component regression, meanwhile, performed the worst by far, and it had an MSE of .31. 
 
 ##Conclusion 
 
-From the regressions that 
-
+While least-squares regression seems like it would be the best regression method to use for prediction purposes, this is probably only be the case for this dataset. Ridge and Lasso, thanks to their penalty on model complexity, actually usually outperform least-squares prediction in prediction. As for the dimension-reduction regression methods, Principal component regression is significantly inferior to partial least squares regression. This is likely because, unlike principal component regression, partial least squares regression takes into account how each explanatory variable interacts with the response variable. 
