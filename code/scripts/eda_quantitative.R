@@ -1,16 +1,14 @@
----
-title: "EDA"
-output: html_document
----
 
+
+#setwd("/Users/josephfrancia/Desktop/Fall_2016/Stats159/stat159-fall2016-project2")
+#data=read.csv("/Users/josephfrancia/Desktop/Fall_2016/Stats159/stat159-fall2016-project2/data/scaled-credit.csv")
 args=commandArgs(trailingOnly=TRUE)
-data=read.csv(paste("../../",args[1], sep=""))
-data=data[,-1]
+data=read.csv(args[1])[,-1]
 
 
 #quant-variables-statistics.txt
 library(xtable)
-sink(file="../../data/quant-variables-statistics.txt")
+sink(file="data/quant-variables-statistics.txt")
 income_min=min(data$Income)
 income_max=max(data$Income)
 income_median=median(data$Income)
@@ -117,72 +115,72 @@ cor(data[, -c(7,8,9,10)])
 sink()
 
 #Income Histogram
-png(filename="../images/histogram-Income.png")
+png(filename="images/histogram-Income.png")
 hist(data$Income, main="Histogram of Income", xlab="Income")
 dev.off()
 
 #Limit Histogram
-png(filename="../images/histogram-Limit.png")
+png(filename="images/histogram-Limit.png")
 hist(data$Limit, main="Histogram of Limit", xlab="Limit")
 dev.off()
 
 #Rating Histogram
-png(filename="../images/histogram-Rating.png")
+png(filename="images/histogram-Rating.png")
 hist(data$Rating, main="Histogram of Rating", xlab="Rating")
 dev.off()
 
 #Cards Histogram
-png(filename="../images/histogram-Cards.png")
+png(filename="images/histogram-Cards.png")
 hist(data$Cards, main="Histogram of Credit Cards", xlab="Number of Credit Cards")
 dev.off()
 
 #Age Histogram
-png(filename="../images/histogram-Age.png")
+png(filename="images/histogram-Age.png")
 hist(data$Age, main="Histogram of Age", xlab="Age")
 dev.off()
 
 #Education Histogram
-png(filename="../images/histogram-Education.png")
+png(filename="images/histogram-Education.png")
 hist(data$Education, main="Histogram of Years of Education", xlab="Years of Education")
 dev.off()
 
 #Balance Histogram
-png(filename="../images/histogram-Balance.png")
+png(filename="images/histogram-Balance.png")
 hist(data$Balance, main="Histogram of Balance", xlab="Balance")
 dev.off()
 
 #Income Boxplot
-png(filename="../images/boxplot-Income.png")
+png(filename="images/boxplot-Income.png")
 boxplot(data$Income, main="Boxplot of Income", ylab="Income")
 dev.off()
 
 #Limit Boxplot
-png(filename="../images/boxplot-Limit.png")
+png(filename="images/boxplot-Limit.png")
 boxplot(data$Limit, main="Boxplot of Limit", ylab="Limit")
 dev.off()
 
 #Rating Boxplot
-png(filename="../images/boxplot-Rating.png")
+png(filename="images/boxplot-Rating.png")
 boxplot(data$Rating, main="Boxplot of Rating", ylab="Rating")
 dev.off()
 
 #Cards Boxplot
-png(filename="../images/boxplot-Cards.png")
+png(filename="images/boxplot-Cards.png")
 boxplot(data$Cards, main="Boxplot of Credit Cards", ylab="Number of Credit Cards")
 dev.off()
 
 #Age Boxplot
-png(filename="../images/boxplot-Age.png")
+png(filename="images/boxplot-Age.png")
 boxplot(data$Age, main="Boxplot of Age", xlab="Age")
 dev.off()
 
 #Education Boxplot
-png(filename="../images/boxplot-Education.png")
+png(filename="images/boxplot-Education.png")
 boxplot(data$Education, main="Boxplot of Years of Education", ylab="Years of Education")
 dev.off()
 
 #Balance Boxplot
-png(filename="../images/boxplot-Balance.png")
+png(filename="images/boxplot-Balance.png")
 boxplot(data$Balance, main="Boxplot of Balance", ylab="Balance")
 dev.off()
 

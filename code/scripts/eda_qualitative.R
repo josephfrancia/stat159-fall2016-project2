@@ -1,18 +1,17 @@
 args=commandArgs(trailingOnly=TRUE)
-data=read.csv(paste("../../data/",args[1], sep=""))
-
+data=read.csv(args[1])[,-1]
+#data=read.csv("/Users/josephfrancia/Desktop/Fall_2016/Stats159/stat159-fall2016-project2/data/Credit.csv")
 library(corrplot)
-
-png(filename="../../images/corrplot.png")
-corrplot(cor(data[,c(2:7,12)]))
+png(filename="images/corrplot.png")
+corrplot(cor(data[,c(1:6,11)]))
 dev.off()
 
-png(filename="../../images/scatterplot.png")
+png(filename="images/scatterplot.png")
 pairs(data)
 dev.off()
 
 aov<- aov(Balance~Income+Limit+Rating+Cards+Age+Education,data=data)
-save(aov,file="../../data/avova-table.RData")
+save(aov,file="data/avova-table.RData")
 
 
 #Making Frequency Table For Gender Variable
@@ -47,43 +46,43 @@ freq_ethnicity$Counts=c(as.numeric(table(data$Ethnicity)[1]),as.numeric(table(da
 freq_ethnicity$Proportion=c(as.numeric(table(data$Ethnicity )[1])/length(data$Ethnicity),as.numeric(table(data$Ethnicity)[2])/length(data$Ethnicity),as.numeric(table(data$Ethnicity)[3])/length(data$Ethnicity))
 
 
-save(freq_gender, freq_ethnicity, freq_married, freq_student, file="../../data/freq_tables.RData")
+save(freq_gender, freq_ethnicity, freq_married, freq_student, file="data/freq_tables.RData")
 
 #Gender Barchart
-png(filename="../../images/barchart-Gender.png")
+png(filename="images/barchart-Gender.png")
 barplot(table(data$Gender), main="Barchart of Gender Variable", xlab="Gender")
 dev.off()
 
 #Married Barchart
-png(filename="../../images/barchart-Married.png")
+png(filename="images/barchart-Married.png")
 barplot(table(data$Married), main="Barchart of Married Variable", xlab="Marriage Status")
 dev.off()
 
 #Student Barchart 
-png(filename="../../images/barchart-Student.png")
+png(filename="images/barchart-Student.png")
 barplot(table(data$Student), main="Barchart of Student Variable", xlab="Student Status")
 dev.off()
 
 #Ethnicity Barchart
-png(filename="../../images/barchart-Ethnicity.png")
+png(filename="images/barchart-Ethnicity.png")
 barplot(table(data$Ethnicity), main="Barchart of Ethnicity", xlab="Ethnicity")
 dev.off()
 
-png(filename="../../images/boxplot-gender.png")
+png(filename="images/boxplot-gender.png")
 boxplot(Balance~Gender,data=data,horizontal=T,col=c("red","blue"),xlab="Balance")
 dev.off()
 
 
-png(filename="../../images/boxplot-ethnicity.png")
+png(filename="images/boxplot-ethnicity.png")
 boxplot(Balance~Ethnicity,data=data,horizontal=T,xlab="Balance",col=c("Brown", "yellow", "white"))
 dev.off()
 
 
-png(filename="../../images/boxplot-married.png")
+png(filename="images/boxplot-married.png")
 boxplot(Balance~Married,data=data,horizontal=T,xlab="Balance",col=c("orange","green"))
 dev.off()
 
-png(filename="../../images/boxplot-student.png")
+png(filename="images/boxplot-student.png")
 boxplot(Balance~Student,data=data,horizontal=T,xlab="Balance",col=c("pink","yellow"))
 dev.off()
 

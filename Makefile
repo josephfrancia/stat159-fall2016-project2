@@ -1,6 +1,8 @@
 scaled = data/scaled-credit.csv
 
-.PHONY: all ols ridge plsr pcr lasso compare code/script/pre_modeling_processing.R report
+
+.PHONY: all ols ridge plsr pcr lasso compare code/script/pre_modeling_processing.R compare data/credit.csv
+
 
 all: data eda regressions 
 
@@ -13,8 +15,8 @@ data: data/credit.csv code/script/pre_modeling_processing.R
 
 #performs exploratory data analysis storing relevant images and data in the data and imageas folders respectively
 eda: data
-	Rscript -e code/script/eda_qualitative.R $(scaled)
-	Rscript -e code/script/eda_quantitative.R $(scaled)
+	Rscript code/scripts/eda_qualitative.R data/credit.csv
+	Rscript code/scripts/eda_quantitative.R data/credit.csv
 
 
 #performs all 5 different types of regression
@@ -24,6 +26,7 @@ regressions:
 	make plsr
 	make pcr
 	make lasso
+	make compare
 
 #performs comparison of regression methods
 compare: regressions

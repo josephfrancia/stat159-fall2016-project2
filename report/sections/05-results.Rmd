@@ -21,7 +21,7 @@ load(file="../../data/coef_table.RData")
 <td>
 ```{r results='asis', echo=FALSE}
   library(xtable)
-  print(xtable(mse, caption="Mean Squared Error For Each Regression "),caption.placement='top', comment=F)
+  print(xtable(mse, caption="Mean Squared Error For Each Regression",digits=6) ,caption.placement='top', comment=F)
 ```
 
 </td>
@@ -32,7 +32,7 @@ load(file="../../data/coef_table.RData")
 <tr>
 <td>
 ```{r results='asis', echo=FALSE}
-  print(xtable(betas, caption="Beta Coefficients for Each Regression"), caption.placement='top', comment=F, scalebox='.75')
+  print(xtable(betas, caption="Beta Coefficients for Each Regression"),    caption.placement='top', comment=F, scalebox='.65')
 ```
 
 </td>

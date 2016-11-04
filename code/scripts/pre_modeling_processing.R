@@ -1,11 +1,12 @@
-args=commandArgs(trailingOnly=TRUE)
+#setwd("/Users/josephfrancia/Desktop/Fall_2016/Stats159/stat159-fall2016-project2")
+#data=read.csv("/Users/josephfrancia/Desktop/Fall_2016/Stats159/stat159-fall2016-project2/data/Credit.csv")[,-1]
 
-##Read in data
-setwd("/Users/NickAccount/Desktop/project-2")
-unprocessed_data=read.csv("data/credit.csv")
+args=commandArgs(trailingOnly=TRUE)
+unprocessed_data=read.csv(args[1])[,-1]
+
 
 ##Turn categorical variables into dummy variables
-processed<-model.matrix(~0+., unprocessed_data[,-1])
+processed<-model.matrix(~0+., unprocessed_data)
 
 
 ##normalize non-categorical explanotory variables
