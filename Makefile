@@ -4,7 +4,12 @@ scaled = data/scaled-credit.csv
 .PHONY: all ols ridge plsr pcr lasso compare code/script/pre_modeling_processing.R compare data/credit.csv report slides
 
 
-all: data eda regressions compare report
+all:
+	make data
+	make eda
+	make regressions
+	make compare
+	make report
 
 
 #downloads and processes credit data storing it as data/scaled_credit.csv

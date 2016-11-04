@@ -7,10 +7,10 @@ output: pdf_document
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Before we look at regression performance, lets take a look at how the estimated regression coefficients differ for each regression: 
 
-```{r, fig.width=50, echo =FALSE,warning=FALSE}
+```{r, fig.width=50, echo =FALSE,warning=FALSE,message=FALSE}
 library(xtable)
 library(ggplot2)
-load("data/betas.Rdata")
+load("data/betas.RData")
 knitr::kable(betas, digits = 3, caption = 'A table of coefficients', width=50)
 ```
 
