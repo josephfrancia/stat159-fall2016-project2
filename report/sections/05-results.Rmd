@@ -19,9 +19,10 @@ knitr::kable(betas, digits = 3, caption = 'A table of coefficients', width=50)
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Now that we have a better understanding of each of these regression methods, lets look at the data in order to see how each regression performed: 
 
-
-![Boxplots of MSE](images/mse.png)
-
-
+```{r,echo=FALSE,message=FALSE,warning=FALSE,errors=FALSE}
+load("../../data/mse_table.RData")
+barplot(t(mse), xaxt="n", main="MSE of Regression Methods",fin=c(3,3))
+axis(side=1,labels=c("OLS", "Ridge", "PLS","PCR","Lasso"), at=c(.75,1.95,3.15,4.35,5.55),fin=c(1,1))
+```
 ![Coefficient Plot](images/coefficient_plot.png)
 

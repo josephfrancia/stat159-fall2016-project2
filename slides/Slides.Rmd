@@ -16,7 +16,7 @@ We will be using a dataset where the response variable is an individual's credit
 Before we ran any sort of regression on the dataset, we first engaged in some exploratory data analysis by making histograms, boxplots, and summary statistics for the variables in our dataset. Here's a boxplot of our Balance variable, which is our response variable.
 
 <div class="centered">
-<img src="../images/boxplot-Balance.png" width="300" length="100" /> 
+<img src="images/boxplot-Balance.png" width="300" length="100" /> 
 </div>
 
 ## Preparing our Data for Regression Analysis
@@ -57,13 +57,13 @@ PLSR: similar to PCA, but its linear combinations of explanatory variables take 
 ##Regression Coefficients
 Lets take a look at how our regression coefficients differed for each regression type. The plot below demonstrates how the regression coefficients change for each regression type: 
 <div class="centered">
-<img src="../images/coefficient_plot.png" width="250" length="100" /> 
+<img src="images/coefficient_plot.png" width="250" length="100" /> 
 </div>
 While informative, this coefficient plot doesn't tell us about the predictive performance of our regressions. In the next slide, I'll go over how well/poorly our regressions did from a prediction standpoint.  
 
 ##Regression Prediction Performance
 
-```{r results='asis', echo=FALSE}
+```{r results='asis', echo=FALSE,warning=FALSE}
   library(xtable)
   load(file="../data/mse_table.RData")
   x=xtable(mse, digits=6)
