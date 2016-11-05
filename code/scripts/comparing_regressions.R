@@ -31,6 +31,7 @@ save(betas, file="data/betas.RData")
 
 #MSE
 png(filename="images/mse.png")
+par(pin=c(50,50))
 barplot(t(mse), xaxt="n", main="MSE of Regression Methods")
 axis(side=1,labels=c("OLS", "Ridge", "PLS","PCR","Lasso"), at=c(.75,1.95,3.15,4.35,5.55))
 dev.off()
